@@ -1,0 +1,48 @@
+from django.db import models
+class Emp(models.Model):
+name=models.CharField(max_length=30)
+position=models.CharField(max_length=30)
+office=models.CharField(max_length=30)
+age=models.PositiveIntegerField()
+start_date=models.DateField()
+salary=models.PositiveIntergerField()
+
+q1>query for adding new record
+
+ans)Emp.objects.create(name="soma",position="qa",office="maltos",age=23,start_Date=Date(14-06-2024),salary=50000)
+
+q2>query for updating emp record
+
+ans)qs=Emp.objects.filter(id=1).update(salary=60000,office="newyas")
+
+q3>query for filtering emp age and salary
+
+ans)qs=Emp.objects.filter(age=25,salary=32000)
+
+q4>deleting emp records
+Emp.objects.filter/get(id=2).delete()
+
+q5>emp with salary>25000
+qs=Emp.objects.filter(salary__gt=25000)
+
+q6>filtering emp office is sanfransico
+qs=Emp.objects.filter(office="sanfransico")
+
+
+q7>query for fetching all records
+qs=Emp.objects.all()
+q8>sort emp based on salary asc
+Emp.objects.all().order_by("salary") #asc
+Emp.objects.all().order_by("-salary") #desc
+
+q8)employee with highest salary
+max_salary=Emp.objects.all().values("salary").aggregate(sal=Max("salary"))
+
+q9)group employee with office
+
+office_summ=Emp.objects.all().values('office').annoatete(cnt=Count('office'))
+
+search character anywhere in text
+qs=Emp.objects.filter(name__contains)
+
+

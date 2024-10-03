@@ -1,0 +1,42 @@
+{%extends 'base.html'%}
+
+{%block main_block%}
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="w-100 text-end"> 
+                <a href="{%url 'movie-add'%}" class="btn btn-primary">Add</a>
+            </div>
+            <table class="table table-striped">
+                <tr>
+                    <th>Title</th>
+                    <th>Genre</th>
+                    <th>Language</th>
+                    <th>Year</th>
+                    <th>Runtime</th>
+                    <th>Director</th>
+                    <th>Action</th>
+                </tr>
+                {%for m in movies%}
+                <tr>
+                    <td>{{m.title}}</td>
+                    <td>{{m.genre}}</td>
+                    <td>{{m.language}}</td>
+                    <td>{{m.year}}</td>
+                    <td>{{m.run_time}}</td>
+                    <td>{{m.director}}</td>
+                    <td><a href="{%url 'movie-delete' m.id %}" class="btn btn-danger mb-3">Remove</a>
+                        <a href="{%url 'movie-detail' m.id %}" class="btn btn-primary">Detail</a>
+                        <a href="{%url 'movie-update' m.id %}" class="btn btn-primary">Update</a>
+                    
+                    </td>
+                </tr>
+                {%endfor%}
+            </table>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
+{%endblock%}

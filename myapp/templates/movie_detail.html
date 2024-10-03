@@ -1,0 +1,32 @@
+{%extends 'base.html'%}
+
+{%block main_block%}
+
+<div class="container">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <table class="table mt-5 shadow-lg borderless table-hover">
+        <tr>
+          <th>Title</th>
+          <th>Genre</th>
+          <th>Language</th>
+          <th>Year</th>
+          <th>Runtime</th>
+          <th>Director</th>
+        </tr>
+
+        <tr>
+          <td>{{movie.title}}</td>
+          <td>{{movie.genre}}</td>
+          <td>{{movie.language}}</td>
+          <td>{{movie.year}}</td>
+          <td>{{movie.run_time}}</td>
+          <td>{{movie.director}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
+{%endblock%}
